@@ -6,20 +6,20 @@
  */
 
 #import "AppDelegate.h"
-
 #import <React/RCTBridge.h>
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTRootView.h>
-
+#import <Firebase.h>
 #import <FBSDKCoreKit/FBSDKCoreKit.h>
-
+#import <RNGoogleSignin/RNGoogleSignin.h>
 @implementation AppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+  [FIRApp configure];
   
   [[FBSDKApplicationDelegate sharedInstance] application:application
-                           didFinishLaunchingWithOptions:launchOptions];
+                           didFinishLaunchingWithOptions:launchOptions];  
   
   RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
   RCTRootView *rootView = [[RCTRootView alloc] initWithBridge:bridge
@@ -57,5 +57,13 @@
   // Add any custom logic here.
   return handled;
 }
-
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+  
+  return [RNGoogleSignin application:application
+                             openURL:url
+                   sourceApplication:sourceApplication
+                          annotation:annotation
+          ];
+}
 @end

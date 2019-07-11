@@ -7,7 +7,7 @@ target 'Dating' do
 
   # Pods for Dating
 
-
+   pod 'GoogleSignIn'
 
 
   pod 'RNCAsyncStorage', :path => '../node_modules/@react-native-community/async-storage'
@@ -42,11 +42,17 @@ rn_path = '../node_modules/react-native'
     'RCTGeolocation',
     'DevSupport'
   ]
-
-
-   pod 'FBSDKCoreKit', '~> 4.39.1'
+  
+  pod 'Firebase/Core', '~> 6.3.0'
+  pod 'Firebase/Auth', '~> 6.3.0'
+  pod 'ReactNativePermissions',:path => '../node_modules/react-native-permissions'
+  pod 'FBSDKCoreKit', '~> 4.39.1'
   pod 'FBSDKLoginKit', '~> 4.39.1'
   pod 'FBSDKShareKit', '~> 4.39.1'
+  pod 'RNGoogleSignin', :path => '../node_modules/react-native-google-signin'
+
+  pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
+
   target 'DatingTests' do
     inherit! :search_paths
     # Pods for testing
@@ -64,3 +70,4 @@ if target.name == "yoga"
     end
   end
 end
+

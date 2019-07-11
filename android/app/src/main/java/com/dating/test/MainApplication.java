@@ -5,6 +5,11 @@ import android.app.Application;
 import com.dylanvann.fastimage.FastImageViewPackage;
 import com.facebook.CallbackManager;
 import com.facebook.react.ReactApplication;
+import com.heanoria.library.reactnative.locationenabler.RNAndroidLocationEnablerPackage;
+import io.invertase.firebase.RNFirebasePackage;
+import com.reactnative.ivpusic.imagepicker.PickerPackage;
+import co.apptailor.googlesignin.RNGoogleSigninPackage;
+import com.ashideas.rnrangeslider.RangeSliderPackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -14,6 +19,7 @@ import com.oblador.vectoricons.VectorIconsPackage;
 import com.react.rnspinkit.RNSpinkitPackage;
 import com.reactnativecommunity.asyncstorage.AsyncStoragePackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+import io.invertase.firebase.auth.RNFirebaseAuthPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -38,13 +44,19 @@ private static CallbackManager mCallbackManager = CallbackManager.Factory.create
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNAndroidLocationEnablerPackage(),
+           new RNFirebasePackage(),
+            new PickerPackage(),
+            new RNGoogleSigninPackage(),
+            new RangeSliderPackage(),
             new FBSDKPackage(mCallbackManager),
             new RNVersionCheckPackage(),
             new VectorIconsPackage(),
             new RNSpinkitPackage(),
             new RNGestureHandlerPackage(),
             new FastImageViewPackage(),
-            new AsyncStoragePackage()
+            new AsyncStoragePackage(),
+            new RNFirebaseAuthPackage()
       );
     }
 

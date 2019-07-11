@@ -11,26 +11,28 @@ function navigate(routeName, params) {
     NavigationActions.navigate({
       routeName,
       params,
-    }),
+    })
   );
 }
 
 function reset(routeName, params) {
-  _navigator.dispatch(
-    StackActions.reset({
-      index: 0,
-      actions: [NavigationActions.navigate({ routeName, params })],
-    }),
-  );
-}
+    _navigator.dispatch(
+        StackActions.reset({
+            index: 0,
+            actions: [NavigationActions.navigate({routeName, params})],
+        })
+    );
+  }
 
-function pop() {
-  _navigator.dispatch(NavigationActions.back());
-}
+  function pop() {
+    _navigator.dispatch(
+      NavigationActions.back()
+    );
+  }
 
 export default {
-  reset,
-  navigate,
-  setTopLevelNavigator,
-  pop,
-};
+    reset,
+    navigate,
+    setTopLevelNavigator,
+    pop,
+  };
