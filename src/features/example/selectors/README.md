@@ -1,0 +1,1 @@
+Efficiently compute derived data from our application’s state.

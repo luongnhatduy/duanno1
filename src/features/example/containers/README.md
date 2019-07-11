@@ -1,0 +1,1 @@
+The feature’s redux-related logic is placed here.

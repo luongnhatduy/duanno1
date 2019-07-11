@@ -1,0 +1,1 @@
+Here we place the explore feature’s components and their related styles
